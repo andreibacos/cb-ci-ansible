@@ -1,0 +1,15 @@
+- hosts: localhost
+  gather_facts: no
+  vars_files:
+    - variables.yaml
+
+  tasks:
+    - name: test
+      shell: ls
+
+    - name: test2
+      shell: exit 0
+      register: task_result
+      until: task_result.rc == 0
+      retries: 2
+      delay: 2

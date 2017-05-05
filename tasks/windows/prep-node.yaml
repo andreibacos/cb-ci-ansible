@@ -1,0 +1,19 @@
+  - name: Create openstack folders
+    #debug: msg="{{ item }}"
+    win_file:
+      path: "{{ item }}"
+      state: directory
+    with_items: "{{ win_dir.values() }}"
+
+  - name: Download openstack bin archive
+    win_get_url:
+      url: "{{ dl_server }}/{{ openstack_bin_archive }}"
+      dest: "{{ win_dir.tmp }}\\{{ openstack_bin_archive }}"
+      force: no
+
+  - name: Unzip openstack bin archive
+    cb_unzip:
+      src: "{{ win_dir.tmp }}\\{{ openstack_bin_archive }}"
+      dest: "{{ win_dir.bin  }}"
+    tags: test
+

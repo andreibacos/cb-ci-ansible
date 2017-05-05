@@ -1,0 +1,10 @@
+- hosts: hyperv
+  gather_facts: no
+  strategy: free
+  vars_files:
+    - variables.yaml
+
+  tasks:
+    - include: tasks/windows/prep-node.yaml
+
+

@@ -1,0 +1,11 @@
+  win_dir:
+    openstack: 'c:\openstack'
+    bin: 'c:\openstack\bin'
+    log: 'c:\openstack\log'
+    etc: 'c:\openstack\etc'
+    build: 'c:\openstack\build'
+    tmp: 'c:\openstack\tmp'
+
+  dl_server: http://10.20.1.14:8080
+  openstack_bin_archive: openstack_bin.zip
+

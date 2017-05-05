@@ -1,0 +1,16 @@
+[hyperv]
+10.20.1.27
+
+[local]
+localhost
+
+[local:vars]
+ansible_connection=local
+
+[hyperv:vars]
+ansible_user=administrator
+ansible_connection=winrm
+ansible_winrm_transport=certificate
+ansible_winrm_cert_pem=/home/andrei/work/ssl/winrm_cambridge.pem
+ansible_winrm_cert_key_pem=/home/andrei/work/ssl/winrm_cambridge.key
+ansible_winrm_server_cert_validation=ignore
